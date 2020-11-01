@@ -48,14 +48,14 @@ print(C+"                |_|"+RT+B+"*by p0isonBR"+RT)
 
 time.sleep(3); os.system('clear')
 
-print(B+"*By PoisonBR"+RT)
-print(G+"""┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏┓
+print(B+"*By PoisonBR"+RT+G+"""
+┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏┓
 ┃┏━┓┃┃┗┛┃┃┏━┓┃  ┃┏━┓┃       ┃┃
 ┃┗━━┫┏┓┏┓┃┗━━┓  ┃┗━━┳━━┳━┓┏━┛┣━━┳━┓
 ┗━━┓┃┃┃┃┃┣━━┓┣━━╋━━┓┃┃━┫┏┓┫┏┓┃┃━┫┏┛
 ┃┗━┛┃┃┃┃┃┃┗━┛┣━━┫┗━┛┃┃━┫┃┃┃┗┛┃┃━┫┃
-┗━━━┻┛┗┛┗┻━━━┛  ┗━━━┻━━┻┛┗┻━━┻━━┻┛ v 1.1""")
-print(C+"""Consiga suas credenciais gratis no site d7networks.com.
+┗━━━┻┛┗┛┗┻━━━┛  ┗━━━┻━━┻┛┗┻━━┻━━┻┛ v 1.1"""+C+"""
+Consiga suas credenciais gratis no site d7networks.com.
 """+RT)
 
 D7="https://http-api.d7networks.com/send"
