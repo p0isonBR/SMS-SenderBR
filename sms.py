@@ -55,7 +55,7 @@ print(G+"""┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏
 ┗━━┓┃┃┃┃┃┣━━┓┣━━╋━━┓┃┃━┫┏┓┫┏┓┃┃━┫┏┛
 ┃┗━┛┃┃┃┃┃┃┗━┛┣━━┫┗━┛┃┃━┫┃┃┃┗┛┃┃━┫┃
 ┗━━━┻┛┗┛┗┻━━━┛  ┗━━━┻━━┻┛┗┻━━┻━━┻┛ v 1.1""")
-print("""C+"Consiga suas credenciais gratis no site d7networks.com.
+print(C+"""Consiga suas credenciais gratis no site d7networks.com.
 """+RT)
 
 D7="https://http-api.d7networks.com/send"
