@@ -79,7 +79,7 @@ except:
  NP=int(input(R+"Digite um valor NUMERICO valido (1-5): "+C))
 while(NP > 5):
  print(Y+"""
- No maximo 5 pessoas por vez.
+No maximo 5 pessoas por vez.
  """); time.sleep(2)
  NP=int(input(B+"Digite novamente o numero de pessoas: "+C))
 print(Y+"""
@@ -94,8 +94,7 @@ SEND=requests.request("GET", D7, headers=H, params=SMS)
 RES=SEND.text
 FEED=SEND.text[0:6]
 if FEED == "Succes":
- print(G+"""
-SMS enviado com sucesso!
+ print(G+"""SMS enviado com sucesso!
 """)
 else:
  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
@@ -105,7 +104,7 @@ else:
 if NP > 1:
  SMS['to'] = input(B+"Digite o "+C+"segundo"+B+" numero destino: "+C)
  print(Y+"""
- Enviando SMS...
+Enviando SMS...
  """)
  SEND=requests.request("GET", D7, headers=H, params=SMS)
  RES=SEND.text
@@ -121,7 +120,7 @@ if NP > 1:
 if NP > 2:
  SMS['to']=input(B+"Digite o "+C+"terceiro"+B+" numero destino: "+C)
  print(Y+"""
- Enviando SMS...
+Enviando SMS...
  """)
  SEND=requests.request("GET", D7, headers=H, params=SMS)
  RES=SEND.text
@@ -137,7 +136,7 @@ if NP > 2:
 if NP > 3:
  SMS['to'] = input(B+"Digite o "+C+"quarto"+B+" numero destino: "+C)
  print(Y+"""
- Enviando SMS...
+Enviando SMS...
  """)
  SEND=requests.request("GET", D7, headers=H, params=SMS)
  RES=SEND.text
@@ -153,7 +152,7 @@ if NP > 3:
 if NP > 4:
  SMS['to'] = input(B+"Digite o "+C+"quinto"+B+" numero destino: "+C)
  print(Y+"""
- Enviando SMS...
+Enviando SMS...
  """)
  SEND=requests.request("GET", D7, headers=H, params=SMS)
  RES=SEND.text
