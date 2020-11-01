@@ -1,14 +1,8 @@
 #SMS SENDER 1.1 pt-BR by PoisonBR
-import os
-import time
-import requests
+import os,time,requests
 
-R = "\033[1;31m"
-B = "\033[1;34m"
-C = "\033[1;37m"
-Y = "\033[1;33m"
-G = "\033[1;32m"
-RT = "\033[;0m"
+#Cores
+R="\033[1;31m"; B="\033[1;34m"; C="\033[1;37m"; Y="\033[1;33m"; G="\033[1;32m"; RT="\033[;0m"
 
 os.system('clear')
 
@@ -52,8 +46,7 @@ print("                |  __/ \___/|_|___/\___/|_| |_|____/|_|  \_\ ")
 print(C+"                | |"+RT+B+"*t.me/p0isonBR*"+RT)
 print(C+"                |_|"+RT+B+"*by p0isonBR"+RT)
 
-time.sleep(3)
-os.system('clear')
+time.sleep(3); os.system('clear')
 
 print(B+"*By PoisonBR"+RT)
 print(G+"""┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏┓
@@ -62,117 +55,115 @@ print(G+"""┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏
 ┗━━┓┃┃┃┃┃┣━━┓┣━━╋━━┓┃┃━┫┏┓┫┏┓┃┃━┫┏┛
 ┃┗━┛┃┃┃┃┃┃┗━┛┣━━┫┗━┛┃┃━┫┃┃┃┗┛┃┃━┫┃
 ┗━━━┻┛┗┛┗┻━━━┛  ┗━━━┻━━┻┛┗┻━━┻━━┻┛ v 1.1""")
-print(C+"Consiga suas credenciais gratis no site d7networks.com."+RT)
-print()
-D7 = "https://http-api.d7networks.com/send"
-SMS = {
-'from': "SMSinfo",
+print("""C+"Consiga suas credenciais gratis no site d7networks.com.
+"""+RT)
+
+D7="https://http-api.d7networks.com/send"
+SMS={
+'from': "37900",
 'dlr-method': "POST",
 'dlr-url': "https://4ba60af1.ngrok.io/receive",
 'dlr': "yes",
 'dlr-level': "3"
 }
-H = {
+H={
 'cache-control': "no-cache"
 }
-
-SMS["username"] = input(B+"Username da API: "+C)
-SMS["password"] = input(B+"Senha da API: "+C)
-SMS["content"] = input(B+"Digite o texto a ser enviado: "+C)
+SMS["username"]=input(B+"Username da API: "+C)
+SMS["password"]=input(B+"Senha da API: "+C)
+SMS["content"]=input(B+"Digite o texto a ser enviado: "+C)
 
 try:
- NP = int(input(B+"Para quantas pessoas deseja enviar?: "+C))
+ NP=int(input(B+"Para quantas pessoas deseja enviar?: "+C))
 except:
- NP = int(input(R+"Digite um valor NUMERICO valido (1-5): "+C))
-
-while(NP >= 6):
- print()
- print(Y+"No maximo 5 pessoas por vez.")
- print()
- time.sleep(2)
- NP = int(input(B+"Digite novamente o numero de pessoas: "+C))
-
-print(Y+"ATENCAO: "+C+"Coloque o codigo do pais na frente do numero! ("+G+"+55"+C+")")
-print()
-SMS['to'] = input(B+"Dgite o numero destino: "+C)
-print()
-print(Y+"Enviando SMS...")
-print()
-SEND = requests.request("GET", D7, headers=H, params=SMS)
-RES = SEND.text
-FEED = SEND.text[0:6]
-
+ NP=int(input(R+"Digite um valor NUMERICO valido (1-5): "+C))
+while(NP > 5):
+ print(Y+"""
+ No maximo 5 pessoas por vez.
+ """); time.sleep(2)
+ NP=int(input(B+"Digite novamente o numero de pessoas: "+C))
+print(Y+"""
+ATENCAO: """+C+"""Coloque o codigo do pais na frente do numero! ("""+G+"""+55"""+C+""")
+""")
+#SMS 1
+SMS['to']=input(B+"Dgite o numero destino: "+C)
+print(Y+"""
+Enviando SMS...
+""")
+SEND=requests.request("GET", D7, headers=H, params=SMS)
+RES=SEND.text
+FEED=SEND.text[0:6]
 if FEED == "Succes":
- print(G+"SMS enviado com sucesso!")
- print()
+ print(G+"""
+SMS enviado com sucesso!
+""")
 else:
- print(R+"Erro ao enviar SMS, confira os dados e tente novamente.")
- time.sleep(2)
+ print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
  print(Y+"Resposta do servidor: "+C+RES)
  print()
+#SMS 2
 if NP > 1:
  SMS['to'] = input(B+"Digite o "+C+"segundo"+B+"  numero destino: "+C)
- print()
- print(Y+"Enviando SMS...")
- print()
- SEND = requests.request("GET", D7, headers=H, params=SMS)
- RES = SEND.text
- FEED = SEND.text[0:6]
+ print(Y+"""
+ Enviando SMS...
+ """)
+ SEND=requests.request("GET", D7, headers=H, params=SMS)
+ RES=SEND.text
+ FEED=SEND.text[0:6]
  if FEED == "Succes":
-  print(G+"SMS enviado com sucesso!")
-  print()
+  print(G+"""SMS enviado com sucesso!
+  """)
  else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente.")
-  time.sleep(1)
+  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
   print(Y+"Resposta do servidor: "+C+RES)
   print()
+#SMS 3
 if NP > 2:
- SMS['to'] = input(B+"Digite o terceiro numero destino: "+C)
- print()
- print(Y+"Enviando SMS...")
- print()
- SEND = requests.request("GET", D7, headers=H, params=SMS)
- RES = SEND.text
- FEED = SEND.text[0:6]
+ SMS['to']=input(B+"Digite o terceiro numero destino: "+C)
+ print(Y+"""
+ Enviando SMS...
+ """)
+ SEND=requests.request("GET", D7, headers=H, params=SMS)
+ RES=SEND.text
+ FEED=SEND.text[0:6]
  if FEED == "Succes":
-  print(G+"SMS enviado com sucesso!")
-  print()
+  print(G+"""SMS enviado com sucesso!
+  """)
  else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente.")
-  time.sleep(2)
+  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
   print(Y+"Resposta do servidor: "+C+RES)
   print()
+#SMS 4
 if NP > 3:
  SMS['to'] = input(B+"Digite o quarto numero destino: "+C)
- print()
- print(Y+"Enviando SMS...")
- print()
- SEND = requests.request("GET", D7, headers=H, params=SMS)
- RES = SEND.text
- FEED = SEND.text[0:6]
+ print(Y+"""
+ Enviando SMS...
+ """)
+ SEND=requests.request("GET", D7, headers=H, params=SMS)
+ RES=SEND.text
+ FEED=SEND.text[0:6]
  if FEED == "Succes":
-  print(G+"SMS enviado com sucesso!")
-  print()
+  print(G+"""SMS enviado com sucesso!
+  """)
  else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente.")
-  time.sleep(2)
+  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
   print(Y+"Resposta do servidor: "+C+RES)
   print()
+#SMS 5
 if NP > 4:
  SMS['to'] = input(B+"Digite o quinto numero destino: "+C)
- print()
- print(Y+"Enviando SMS...")
- print()
- SEND = requests.request("GET", D7, headers=H, params=SMS)
- RES = SEND.text
- FEED = SEND.text[0:6]
+ print(Y+"""
+ Enviando SMS...
+ """)
+ SEND=requests.request("GET", D7, headers=H, params=SMS)
+ RES=SEND.text
+ FEED=SEND.text[0:6]
  if FEED == "Succes":
-  print(G+"SMS enviado com sucesso!")
-  print()
+  print(G+"""SMS enviado com sucesso!
+  """)
  else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente.")
-  time.sleep(2)
+  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
   print(Y+"Resposta do servidor: "+C+RES)
   print()
-print(C+"Me acompanhe no Github: "+G+"https://github.com/p0isonBR"+RT)
-print()
+print(C+"""Me acompanhe no Github: """+G+"""https://github.com/p0isonBR
+"""+RT)
