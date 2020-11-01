@@ -86,7 +86,7 @@ print(Y+"""
 ATENCAO: """+C+"""Coloque o codigo do pais na frente do numero! ("""+G+"""+55"""+C+""")
 """)
 #SMS 1
-SMS['to']=input(B+"Dgite o numero destino: "+C)
+SMS['to']=input(B+"Dgite o "+C+"primeiro"+B+" numero destino: "+C)
 print(Y+"""
 Enviando SMS...
 """)
@@ -103,7 +103,7 @@ else:
  print()
 #SMS 2
 if NP > 1:
- SMS['to'] = input(B+"Digite o "+C+"segundo"+B+"  numero destino: "+C)
+ SMS['to'] = input(B+"Digite o "+C+"segundo"+B+" numero destino: "+C)
  print(Y+"""
  Enviando SMS...
  """)
@@ -119,7 +119,7 @@ if NP > 1:
   print()
 #SMS 3
 if NP > 2:
- SMS['to']=input(B+"Digite o terceiro numero destino: "+C)
+ SMS['to']=input(B+"Digite o "+C+"terceiro"+B+" numero destino: "+C)
  print(Y+"""
  Enviando SMS...
  """)
@@ -135,7 +135,7 @@ if NP > 2:
   print()
 #SMS 4
 if NP > 3:
- SMS['to'] = input(B+"Digite o quarto numero destino: "+C)
+ SMS['to'] = input(B+"Digite o "+C+"quarto"+B+" numero destino: "+C)
  print(Y+"""
  Enviando SMS...
  """)
@@ -151,7 +151,7 @@ if NP > 3:
   print()
 #SMS 5
 if NP > 4:
- SMS['to'] = input(B+"Digite o quinto numero destino: "+C)
+ SMS['to'] = input(B+"Digite o "+C+"quinto"+B+" numero destino: "+C)
  print(Y+"""
  Enviando SMS...
  """)
