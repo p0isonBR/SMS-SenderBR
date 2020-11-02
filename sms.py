@@ -1,4 +1,4 @@
-#SMS SENDER 1.1.1 pt-BR by PoisonBR
+#SMS SENDER 1.1 pt-BR by PoisonBR
 import os,time,requests
 
 #Cores
@@ -57,7 +57,7 @@ print(f"""{B}*By PoisonBR{RT}{G}
 ███████╗██╔████╔██║███████╗█████╗███████╗█████╗  ██╔██╗ ██║██║  ██║█████╗  ██████╔╝
 ╚════██║██║╚██╔╝██║╚════██║╚════╝╚════██║██╔══╝  ██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
 ███████║██║ ╚═╝ ██║███████║      ███████║███████╗██║ ╚████║██████╔╝███████╗██║  ██║
-╚══════╝╚═╝     ╚═╝╚══════╝      ╚══════╝╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝ v1.1.1{C}
+╚══════╝╚═╝ v1.1╚═╝╚══════╝      ╚══════╝╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝ {C}
 Consiga suas credenciais gratis no site d7networks.com.
 {RT}""")
 
@@ -84,31 +84,35 @@ except KeyboardInterrupt:
  print("Cancelado pelo usuário.")
  exit(f"{R}Ctrl+C Pressionado{C}")
 
-while(np > 10):
+try:
+ while(np > 10):
+  print(f"""{Y}
+ No maximo 10 pessoas por vez.
+  """); time.sleep(2)
+  np=int(input(f"{B}Digite novamente o numero de pessoas: {C}"))
  print(f"""{Y}
-No maximo 10 pessoas por vez.
- """); time.sleep(2)
- np=int(input(f"{B}Digite novamente o numero de pessoas: {C}"))
-print(f"""{Y}
 ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
-""")
+ """)
 
-for sender in range(np):
- sms['to']=input(f"{B}Dgite o numero destino: {C}")
- print(f"""{Y}
+ for sender in range(np):
+  sms['to']=input(f"{B}Dgite o numero destino: {C}")
+  print(f"""{Y}
 Enviando SMS...
-""")
- send=requests.request("GET",d7,headers=h,params=sms)
- res=send.text
- feed=send.text[0:6]
- if feed=="Succes":
-  print(f"""{G}SMS enviado com sucesso!
-""")
- else:
-  print(f"{R}Erro ao enviar SMS, confira os dados e tente novamente.")
-  time.sleep(2)
-  print(f"{Y}Resposta do servidor: {C}{res}")
-  print()
-
+ """)
+  send=requests.request("GET",d7,headers=h,params=sms)
+  res=send.text
+  feed=send.text[0:6]
+  if feed=="Succes":
+   print(f"""{G}SMS enviado com sucesso!
+ """)
+  else:
+   print(f"{R}Erro ao enviar SMS, confira os dados e tente novamente.")
+   time.sleep(2)
+   print(f"{Y}Resposta do servidor: {C}{res}")
+   print()
+except KeyboardInterrupt:
+ print(f'{C}Cancelado pelo usuário.')
+ exit(f'{R}Ctrl+C pressionado{C}')
+ 
 print(f"""{C}Me acompanhe no Github: {G}https://github.com/p0isonBR
 {C}""")
