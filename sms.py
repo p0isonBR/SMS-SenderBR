@@ -87,7 +87,7 @@ except KeyboardInterrupt:
 try:
  while(np > 10):
   print(f"""{Y}
- No maximo 10 pessoas por vez.
+No maximo 10 pessoas por vez.
   """); time.sleep(2)
   np=int(input(f"{B}Digite novamente o numero de pessoas: {C}"))
  print(f"""{Y}
