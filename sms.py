@@ -1,168 +1,114 @@
-#SMS SENDER 1.1 pt-BR by PoisonBR
+#SMS SENDER 1.1.1 pt-BR by PoisonBR
 import os,time,requests
 
 #Cores
 R="\033[1;31m"; B="\033[1;34m"; C="\033[1;37m"; Y="\033[1;33m"; G="\033[1;32m"; RT="\033[;0m"
 
-os.system('clear')
+os.system('cls' if os.name=="nt" else 'clear')
 
-print(C+"                            /+osyhhhhhhyys++/")
-print("                         +oydddhhhhyyhhhhdddhy+/")
-print("                      /+yddhyyyys.josue.syyhddhs/")
-print("                     +hddyyssssssssssssssssssyyhdds/")
-print("                   /sddhyyyyyyssssssssssssssyyyyyhmh+")
-print("                  /hmdhhddddddhhhyyyyyyhhhhdddddhhhddo")
-print("                 /hmmdhs+/ //+osyhhhhhhysso+////ohddmdo")
-print("                /hmmmy"+B+".           `````          `"+C+"smddd+")
-print("                smddm/"+B+"     `````          `````   "+C+"mdhmh/")
-print("               +ddydm+"+B+"  -/osyyyys+.    ./syyyyso/-"+C+"mdydms")
-print("               ymhyhmh"+B+".yyo/ -- +hdo  /dho -- /oyh."+C+"ymdyymd/")
-print("              /dmyyymd"+B+".  ``.-   ./   -/.-   .``  `"+C+"dmhsydmo")
-print("              smdysymd"+B+"   shdhyydy      sdyyhddy   "+C+"dmyyshmy")
-print("              dmysshmy"+B+"                            "+C+"smhssymd/")
-print("             /dmyssymd"+B+"                            "+C+"hmhsyymm/")
-print("             /dmyssyhms"+B+"                          /"+C+"mdysyymm/")
-print("             /dmyssyydm/"+B+"  sh       hh/     -hy  ."+C+"dmyssyymm/")
-print("              dmhssssydd/"+B+" -hdhysshdysdhssyhdd  -"+C+"hmhyssyymd/")
-print("              ymhssssyyddo"+B+"``. //+/.` ./+// -` /"+C+"ddhysssyhmh")
-print("              +mdysssssyhdh"+B+" `     `/+`      -"+C+"sddysssssydmo")
-print("               ymhysssssyyddh/"+B+"`   `dm.   ` "+C+"sddhysssssyhmh/")
-print("               /hmhysssssyyyhdds"+B+" ..dm . "+C+"ohddhyyssssyyhmd+")
-print("                /yddhyssssssyyhhddhddddddhyyssssssyydmh+")
-print("               /+sdmmdhhyyyysssyyyyyyyyyysssyyyyyhddmdyo+/")
-print("           /+shdddhhyhhddddddhhhhhhhhhhhhhhdddddddhyyhhdddyo/")
-print("         /shddhyyysssssyyyyhhhhhhhhhhhhhhhhhhyyyyyssssyyyhdddy+")
-print("        /hmhyyssssssssssssssssssssssssssssssssssssssssssssyyhddo")
-print("        /dmhyyyyyssssssssssssssssssssssssssssssssssssssyyyyyydms")
-print("         +yhddddddhhhhhyyyyyyyyyyyyyyyyyyyyyyyyyyhhhhhdddddddhs/")
-print("           //++oossyyhhhhhhhdddddddddddddddddhhhhhhyyssoo++///")
-print("                       ///////+++++++++++++//////")
-print("                        ___  _                 ___   ____")
-print("                       / _ \(_)               |  _ \|  __ \ ")
-print("                 ____ | | | | |___   _   ____ | |_| | |__) |")
-print("                |  _ \| | | | / __|/ _ \|  _ \| |_ <|  _  /")
-print("                | |_) | |_| | \__ \ (_) | | | | |_| ) | \ \ ")
-print("                |  __/ \___/|_|___/\___/|_| |_|____/|_|  \_\ ")
-print(C+"                | |"+RT+B+"*t.me/p0isonBR*"+RT)
-print(C+"                |_|"+RT+B+"*by p0isonBR"+RT)
+print(f"""{C}
+                            /+osyhhhhhhyys++/
+                         +oydddhhhhyyhhhhdddhy+/
+                      /+yddhyyyys.josue.syyhddhs/
+                     +hddyyssssssssssssssssssyyhdds/
+                   /sddhyyyyyyssssssssssssssyyyyyhmh+
+                  /hmdhhddddddhhhyyyyyyhhhhdddddhhhddo
+                 /hmmdhs+/ //+osyhhhhhhysso+////ohddmdo
+                /hmmmy{B}.           `````          `{C}smddd+
+                smddm/{B}     `````          `````   {C}mdhmh/
+               +ddydm+{B}  -/osyyyys+.    ./syyyyso/-{C}mdydms
+               ymhyhmh{B}.yyo/ -- +hdo  /dho -- /oyh.{C}ymdyymd/
+              /dmyyymd{B}.  ``.-   ./   -/.-   .``  `{C}dmhsydmo
+              smdysymd{B}   shdhyydy      sdyyhddy   {C}dmyyshmy
+              dmysshmy{B}                            {C}smhssymd/
+             /dmyssymd{B}                            {C}hmhsyymm/
+             /dmyssyhms{B}                          /{C}mdysyymm/
+             /dmyssyydm/{B}  sh       hh/     -hy  .{C}dmyssyymm/
+              dmhssssydd/{B} -hdhysshdysdhssyhdd  -{C}hmhyssyymd/
+              ymhssssyyddo{B}``. //+/.` ./+// -` /{C}ddhysssyhmh
+              +mdysssssyhdh{B} `     `/+`      -{C}sddysssssydmo
+               ymhysssssyyddh/{B}`   `dm.   ` {C}sddhysssssyhmh/
+               /hmhysssssyyyhdds{B} ..dm . {C}ohddhyyssssyyhmd+
+                /yddhyssssssyyhhddhddddddhyyssssssyydmh+
+               /+sdmmdhhyyyysssyyyyyyyyyysssyyyyyhddmdyo+/
+           /+shdddhhyhhddddddhhhhhhhhhhhhhhdddddddhyyhhdddyo/
+         /shddhyyysssssyyyyhhhhhhhhhhhhhhhhhhyyyyyssssyyyhdddy+
+        /hmhyyssssssssssssssssssssssssssssssssssssssssssssyyhddo
+        /dmhyyyyyssssssssssssssssssssssssssssssssssssssyyyyyydms
+         +yhddddddhhhhhyyyyyyyyyyyyyyyyyyyyyyyyyyhhhhhdddddddhs/
+           //++oossyyhhhhhhhdddddddddddddddddhhhhhhyyssoo++///
+                       ///////+++++++++++++//////
 
-time.sleep(3); os.system('clear')
 
-print(B+"*By PoisonBR"+RT+G+"""
-┏━━━┳━┓┏━┳━━━┓  ┏━━━┓       ┏┓
-┃┏━┓┃┃┗┛┃┃┏━┓┃  ┃┏━┓┃       ┃┃
-┃┗━━┫┏┓┏┓┃┗━━┓  ┃┗━━┳━━┳━┓┏━┛┣━━┳━┓
-┗━━┓┃┃┃┃┃┣━━┓┣━━╋━━┓┃┃━┫┏┓┫┏┓┃┃━┫┏┛
-┃┗━┛┃┃┃┃┃┃┗━┛┣━━┫┗━┛┃┃━┫┃┃┃┗┛┃┃━┫┃
-┗━━━┻┛┗┛┗┻━━━┛  ┗━━━┻━━┻┛┗┻━━┻━━┻┛ v 1.1"""+C+"""
+     ██████╗  ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗██████╗ ██████╗
+     ██╔══██╗██╔═══██╗██║██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗
+     ██████╔╝██║   ██║██║███████╗██║   ██║██╔██╗ ██║██████╔╝██████╔╝
+     ██╔═══╝ ██║   ██║██║╚════██║██║   ██║██║╚██╗██║██╔══██╗██╔══██╗
+     ██║     ╚██████╔╝██║███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║
+     ╚═╝      ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝
+     {RT}{B}*t.me/p0isonBR*{RT}""")
+
+time.sleep(3)
+os.system('cls' if os.name=='nt' else 'clear')
+
+print(f"""{B}*By PoisonBR{RT}{G}
+███████╗███╗   ███╗███████╗      ███████╗███████╗███╗   ██╗██████╗ ███████╗██████╗ 
+██╔════╝████╗ ████║██╔════╝      ██╔════╝██╔════╝████╗  ██║██╔══██╗██╔════╝██╔══██╗
+███████╗██╔████╔██║███████╗█████╗███████╗█████╗  ██╔██╗ ██║██║  ██║█████╗  ██████╔╝
+╚════██║██║╚██╔╝██║╚════██║╚════╝╚════██║██╔══╝  ██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗
+███████║██║ ╚═╝ ██║███████║      ███████║███████╗██║ ╚████║██████╔╝███████╗██║  ██║
+╚══════╝╚═╝     ╚═╝╚══════╝      ╚══════╝╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝ v1.1.1{C}
 Consiga suas credenciais gratis no site d7networks.com.
-"""+RT)
+{RT}""")
 
-D7="https://http-api.d7networks.com/send"
-SMS={
-'from': "37900",
+d7="https://http-api.d7networks.com/send"
+sms={
+'from': "",
 'dlr-method': "POST",
 'dlr-url': "https://4ba60af1.ngrok.io/receive",
 'dlr': "yes",
 'dlr-level': "3"
 }
-H={
+h={
 'cache-control': "no-cache"
 }
-SMS["username"]=input(B+"Username da API: "+C)
-SMS["password"]=input(B+"Senha da API: "+C)
-SMS["content"]=input(B+"Digite o texto a ser enviado: "+C)
+sms["username"]=input(f"{B}Username da API: {C}")
+sms["password"]=input(f"{B}Senha da API: {C}")
+sms["content"]=input(f"{B}Digite o texto a ser enviado: {C}")
 
 try:
- NP=int(input(B+"Para quantas pessoas deseja enviar?: "+C))
-except:
- NP=int(input(R+"Digite um valor NUMERICO valido (1-5): "+C))
-while(NP > 5):
- print(Y+"""
-No maximo 5 pessoas por vez.
+ np=int(input(f"{B}Para quantas pessoas deseja enviar?: {C}"))
+except (ValueError,TypeError):
+ np=int(input(f"{R}Digite um valor NUMERICO valido (1-10): {C}"))
+except KeyboardInterrupt:
+ print("Cancelado pelo usuário.")
+ exit(f"{R}Ctrl+C Pressionado{C}")
+
+while(np > 10):
+ print(f"""{Y}
+No maximo 10 pessoas por vez.
  """); time.sleep(2)
- NP=int(input(B+"Digite novamente o numero de pessoas: "+C))
-print(Y+"""
-ATENCAO: """+C+"""Coloque o codigo do pais na frente do numero! ("""+G+"""+55"""+C+""")
+ np=int(input(f"{B}Digite novamente o numero de pessoas: {C}"))
+print(f"""{Y}
+ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
 """)
-#SMS 1
-SMS['to']=input(B+"Dgite o "+C+"primeiro"+B+" numero destino: "+C)
-print(Y+"""
+
+for sender in range(np):
+ sms['to']=input(f"{B}Dgite o numero destino: {C}")
+ print(f"""{Y}
 Enviando SMS...
 """)
-SEND=requests.request("GET", D7, headers=H, params=SMS)
-RES=SEND.text
-FEED=SEND.text[0:6]
-if FEED == "Succes":
- print(G+"""SMS enviado com sucesso!
+ send=requests.request("GET",d7,headers=h,params=sms)
+ res=send.text
+ feed=send.text[0:6]
+ if feed=="Succes":
+  print(f"""{G}SMS enviado com sucesso!
 """)
-else:
- print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
- print(Y+"Resposta do servidor: "+C+RES)
- print()
-#SMS 2
-if NP > 1:
- SMS['to'] = input(B+"Digite o "+C+"segundo"+B+" numero destino: "+C)
- print(Y+"""
-Enviando SMS...
- """)
- SEND=requests.request("GET", D7, headers=H, params=SMS)
- RES=SEND.text
- FEED=SEND.text[0:6]
- if FEED == "Succes":
-  print(G+"""SMS enviado com sucesso!
-  """)
  else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
-  print(Y+"Resposta do servidor: "+C+RES)
+  print(f"{R}Erro ao enviar SMS, confira os dados e tente novamente.")
+  time.sleep(2)
+  print(f"{Y}Resposta do servidor: {C}{res}")
   print()
-#SMS 3
-if NP > 2:
- SMS['to']=input(B+"Digite o "+C+"terceiro"+B+" numero destino: "+C)
- print(Y+"""
-Enviando SMS...
- """)
- SEND=requests.request("GET", D7, headers=H, params=SMS)
- RES=SEND.text
- FEED=SEND.text[0:6]
- if FEED == "Succes":
-  print(G+"""SMS enviado com sucesso!
-  """)
- else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
-  print(Y+"Resposta do servidor: "+C+RES)
-  print()
-#SMS 4
-if NP > 3:
- SMS['to'] = input(B+"Digite o "+C+"quarto"+B+" numero destino: "+C)
- print(Y+"""
-Enviando SMS...
- """)
- SEND=requests.request("GET", D7, headers=H, params=SMS)
- RES=SEND.text
- FEED=SEND.text[0:6]
- if FEED == "Succes":
-  print(G+"""SMS enviado com sucesso!
-  """)
- else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
-  print(Y+"Resposta do servidor: "+C+RES)
-  print()
-#SMS 5
-if NP > 4:
- SMS['to'] = input(B+"Digite o "+C+"quinto"+B+" numero destino: "+C)
- print(Y+"""
-Enviando SMS...
- """)
- SEND=requests.request("GET", D7, headers=H, params=SMS)
- RES=SEND.text
- FEED=SEND.text[0:6]
- if FEED == "Succes":
-  print(G+"""SMS enviado com sucesso!
-  """)
- else:
-  print(R+"Erro ao enviar SMS, confira os dados e tente novamente."); time.sleep(2)
-  print(Y+"Resposta do servidor: "+C+RES)
-  print()
-print(C+"""Me acompanhe no Github: """+G+"""https://github.com/p0isonBR
-"""+RT)
+
+print(f"""{C}Me acompanhe no Github: {G}https://github.com/p0isonBR
+{C}""")
