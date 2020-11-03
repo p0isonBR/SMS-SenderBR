@@ -58,7 +58,7 @@ print(f'''{B}*By PoisonBR{RT}{G}
 ╚═══██║██║╚██╔╝██║╚═══██║╚═══╝╚═══██║██╔═╝  ██║╚██╗██║██║  ██║██╔═╝  ██╔══██╗
 ██████║██║ ╚═╝ ██║██████║     ██████║██████╗██║ ╚████║██████╔╝██████╗██║  ██║
 ╚═════╝╚═╝ v1.1╚═╝╚═════╝     ╚═════╝╚═════╝╚═╝  ╚═══╝╚═════╝ ╚═════╝╚═╝  ╚═╝ {C}
-Consiga suas credenciais gratis no site d7networks.com.
+Consiga suas credenciais gratis no site {B}d7networks.com.
 {RT}''')
 
 d7='https://http-api.d7networks.com/send'
