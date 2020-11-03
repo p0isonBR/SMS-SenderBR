@@ -99,6 +99,7 @@ ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
  
  for sender in range(np):
   d=d+1
+  d2=str(d)
   extenso={
   '1' :'primeiro',
   '2' :'segundo',
@@ -112,8 +113,8 @@ ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
   '10' :'décimo'
     }
   for key, value in extenso.items():
-    d=d.replace(key,value)
-  sms['to']=input(f'{B}Digite o {C}{d}{B} numero destino: {C}')
+    d2=d2.replace(key,value)
+  sms['to']=input(f'{B}Digite o {C}{d2}{B} numero destino: {C}')
   print(f'''{Y}
 Enviando SMS...
  ''')
