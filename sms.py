@@ -72,6 +72,8 @@ sms={
 h={
 'cache-control': 'no-cache'
 }
+d=0
+
 try:
  sms['username']=input(f'{B}Username da API: {C}')
  sms['password']=input(f'{B}Senha da API: {C}')
@@ -94,9 +96,10 @@ No maximo 10 pessoas por vez.
  print(f'''{Y}
 ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
  ''')
-
+ 
  for sender in range(np):
-  sms['to']=input(f'{B}Dgite o numero destino: {C}')
+  d=d+1
+  sms['to']=input(f'{B}Dgite o {C}{d}°{B} numero destino: {C}')
   print(f'''{Y}
 Enviando SMS...
  ''')
