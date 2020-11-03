@@ -58,7 +58,7 @@ print(f'''{B}*By PoisonBR{RT}{G}
 ╚═══██║██║╚██╔╝██║╚═══██║╚═══╝╚═══██║██╔═╝  ██║╚██╗██║██║  ██║██╔═╝  ██╔══██╗
 ██████║██║ ╚═╝ ██║██████║     ██████║██████╗██║ ╚████║██████╔╝██████╗██║  ██║
 ╚═════╝╚═╝     ╚═╝╚═════╝ v1.1╚═════╝╚═════╝╚═╝  ╚═══╝╚═════╝ ╚═════╝╚═╝  ╚═╝ {C}
-Consiga suas credenciais gratis no site {B}d7networks.com.
+Consiga suas credenciais gratis no site {B}d7networks.com{C}.
 {RT}''')
 
 d7='https://http-api.d7networks.com/send'
@@ -99,7 +99,7 @@ ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
  
  for sender in range(np):
   d=d+1
-  sms['to']=input(f'{B}Digite o {C}{d}°{B} numero destino: {C}')
+  sms['to']=input(f'{B}Digite o {C}{d}°{B} numero destino:{C}')
   print(f'''{Y}
 Enviando SMS...
  ''')
