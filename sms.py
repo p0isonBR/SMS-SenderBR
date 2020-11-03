@@ -99,7 +99,9 @@ ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
  
  for sender in range(np):
   d=d+1
-  sms['to']=input(f'{B}Digite o {C}{d}°{B} numero destino: {C}')
+  for key, value in extenso.items():
+    d=d.replace(key,value)
+  sms['to']=input(f'{B}Digite o {C}{d}{B} numero destino: {C}')
   print(f'''{Y}
 Enviando SMS...
  ''')
@@ -117,6 +119,19 @@ Enviando SMS...
 except KeyboardInterrupt:
  print(f'{C}Cancelado pelo usuário.')
  exit(f'{R}Ctrl+C pressionado{C}')
+
+extenso={
+  '1' :'primeiro',
+  '2' :'segundo',
+  '3' :'terceiro',
+  '4' :'quarto',
+  '5' :'quinto',
+  '6' :'sexto',
+  '7' :'setimo',
+  '8' :'oitavo',
+  '9' :'nono',
+  '10' :'décimo'
+  }
  
 print(f'''{C}Me acompanhe no Github: {G}https://github.com/p0isonBR
 {C}''')
