@@ -99,7 +99,7 @@ ATENCAO: {C}Coloque o codigo do pais na frente do numero! ({G}+55{C})
  
  for sender in range(np):
   d=d+1
-  sms['to']=input(f'{B}Digite o {C}{d}°{B} numero destino:{C}')
+  sms['to']=input(f'{B}Digite o {C}{d}°{B} numero destino: {C}')
   print(f'''{Y}
 Enviando SMS...
  ''')
