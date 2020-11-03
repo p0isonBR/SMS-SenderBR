@@ -72,11 +72,12 @@ sms={
 h={
 'cache-control': 'no-cache'
 }
-sms['username']=input(f'{B}Username da API: {C}')
-sms['password']=input(f'{B}Senha da API: {C}')
-sms['content']=input(f'{B}Digite o texto a ser enviado: {C}')
-
 try:
+ sms['username']=input(f'{B}Username da API: {C}')
+ sms['password']=input(f'{B}Senha da API: {C}')
+ sms['content']=input(f'{B}Digite o texto a ser enviado: {C}')
+
+
  np=int(input(f'{B}Para quantas pessoas deseja enviar?: {C}'))
 except (ValueError,TypeError):
  np=int(input(f'{R}Digite um valor NUMERICO valido (1-10): {C}'))
