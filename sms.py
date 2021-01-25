@@ -1,7 +1,7 @@
 from os import system
 from time import sleep
 from requests import get
-from subprecess import run
+from subprocess import run
 from banner import Banner
 
 system('clear')
