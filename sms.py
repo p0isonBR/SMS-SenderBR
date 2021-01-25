@@ -53,7 +53,7 @@ try:
 	sms['content'] = input(f'{B}Digite o texto a ser enviado: {C}')
 	np = int(input(f'{B}Para quantas pessoas deseja enviar?: {C}'))
 
-except ValueError, TypeError:
+except (ValueError, TypeError):
 	np = int(input(f'{R}Digite um valor NUMERICO valido (1-10): {C}'))
 
 except KeyboardInterrupt:
